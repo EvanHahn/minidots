@@ -3,7 +3,6 @@
 set secure
 set nomodeline
 set noexrc
-set cryptmethod=blowfish2
 
 " syntax highlighting
 
@@ -19,10 +18,6 @@ set number
 set numberwidth=3
 set nocursorcolumn
 set nocursorline
-set visualbell
-if !has('gui_running')
-  set notitle
-endif
 
 " mouse
 
@@ -30,7 +25,6 @@ set mouse=
 
 " editing ui
 
-set listchars=tab:>\ ,eol:¬,trail:·,nbsp:·
 set nolist
 set showmatch
 set nofoldenable
@@ -65,17 +59,9 @@ set hlsearch
 set gdefault
 set nowrapscan
 
-" ctrl-a, ctrl-x
-
-set nrformats=hex
-
 " autoformatting
 
 set formatoptions=tcqnj
-
-" commands
-
-set confirm
 
 " splits
 
@@ -85,11 +71,6 @@ set splitright
 " opening new buffers
 
 set switchbuf=usetab,newtab
-
-" undo
-
-set undofile
-set undodir=/tmp
 
 " wild menu
 
@@ -103,10 +84,6 @@ set wildignore+=*.swp
 set wildignore+=*.pyc
 set wildignore+=.DS_Store
 
-" automatically cd to me
-
-set autochdir
-
 " no more backups
 
 set nobackup
@@ -117,8 +94,6 @@ set nowritebackup
 set completeopt=menu,preview
 
 " remappings
-
-let mapleader = "\<Space>"
 
 nnoremap Y y$
 nnoremap 0 ^
@@ -141,17 +116,6 @@ endif
 " vimdiff options
 
 set diffopt=filler,vertical
-
-" languages
-
-augroup languages
-  autocmd!
-
-  au BufNewFile,BufRead *.ejs set filetype=html
-
-  au FileType python setlocal colorcolumn=80
-  au FileType gitcommit setlocal spell
-augroup END
 
 " netrw
 
